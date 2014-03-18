@@ -1,3 +1,7 @@
+# Let vundle handle bundles, except itself, which should be a submodule.
+.vim/bundles/*
+!.vim/bundle/vundle/**
+
 # Object files
 *.o
 *.ko
