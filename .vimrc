@@ -1,7 +1,5 @@
 """ INIT """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Use Vim settings, rather then Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
 set nocompatible
 
 " Term type
@@ -18,7 +16,6 @@ Bundle 'gmarik/vundle'
 
 Bundle 'scrooloose/nerdtree'
 Bundle 'wincent/Command-T'
-Bundle 'vim-scripts/rainbow_parentheses.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'theevocater/thrift.vim'
 Bundle 'duganchen/vim-soy'
@@ -31,8 +28,6 @@ let g:acp_behaviorKeywordLength=1
 Bundle 'vim-scripts/Conque-Shell'
 
 """ KEY BINDINGS """""""""""""""""""""""""""""""""""""""""""""""""""
-
-""let mapleader = \;
 
 nnoremap <space> <c-d>
 nnoremap <s-space> <c-u>
@@ -56,6 +51,11 @@ nnoremap <c-h> <c-w><c-h>
 nnoremap <c-j> <c-w><c-j>
 nnoremap <c-k> <c-w><c-k>
 nnoremap <c-l> <c-w><c-l>
+
+noremap <d-h> <c-w><lt>
+noremap <d-l> <c-w><gt>
+noremap <d-j> <c-w>-
+noremap <d-k> <c-w>+
 
 " buffers
 nnoremap <c-n> :bn<enter>
@@ -130,7 +130,11 @@ set statusline=\ (%n)\ %(%m%r\ %)%f\ %Y%=<0x%B>\ %l,%c\ /\ %L\ (%p%%)\
 set showcmd			" display incomplete commands
 set scrolloff=2 " keep two lines before or after the cursor
 set showbreak=>\  " Show line wraps with "> ".  Note trailing space.
-set cursorline    "Highlight cursor line
+""set cursorline    "Highlight cursor line
+
+" Highlight current line
+autocmd WinEnter * setlocal cursorline
+autocmd WinLeave * setlocal nocursorline
 
 
 
@@ -192,7 +196,7 @@ autocmd BufReadPost *
 augroup filetype
   au!
   au! BufRead,BufNewFile *.sig set filetype=sml
-
+augroup END
 
 " Open help files vertically
 augroup helpfiles
