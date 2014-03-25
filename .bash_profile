@@ -17,6 +17,31 @@ alias cd="pushd . > /dev/null; cd"
 
 alias tag="ctags -R --exclude=.git"
 
+# Use the prefix of what you have typed already to search backwards when
+# pressing up/down to navigate history
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+
+# Prevent accidentally overwriting files when piping output
+# echo hello >out.txt will fail if out.txt already exists
+set -o noclobber
+
+# save multiline commands as one history item
+shopt -s cmdhist
+
+# Globs match dotfiles.
+shopt -s dotglob
+
+# Don't overwrite history.
+shopt -s histappend
+
+# Allow escape sequences in echo.
+shopt -s xpg_echo
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
 # comments are xterm colors
 hexbgclr=1c1c1c # 234
 hexfgclr=d0d0d0 # 252
