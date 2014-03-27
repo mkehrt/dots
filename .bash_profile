@@ -22,7 +22,7 @@ nth() { head -n $1 | tail -n 1 ; }
 alias last="tail -n 1"
 
 alias gv="grep -v"
-alias histg="history | grep"
+alias histg="history | grep -i"
 alias search="find . -iname"
 
 alias tag="ctags -R --exclude=.git"
