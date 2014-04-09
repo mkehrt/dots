@@ -75,6 +75,9 @@ nnoremap <ScrollWheelDown> <ScrollWheelDown>:redraw!<enter>
 inoremap <ScrollWheelUp> <esc><ScrollWheelUp>:redraw!<enter>
 inoremap <ScrollWheelDown> <esc><ScrollWheelDown>:redraw!<enter>
 
+nnoremap <C-S> :set scrollbind!<C-R>
+vnoremap <C-S> :set scrollbind!<C-R>
+inoremap <C-S> <esc>:set scrollbind!<C-R>a
 
 """ NERDTREE KEY
 ""nnoremap t :NERDTree<enter>
@@ -125,7 +128,16 @@ set foldmethod=manual
 """ Misc display """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set number
 set laststatus=2 " always show status bar
-set statusline=\ (%n)\ %(%m%r\ %)%f\ %Y%=<0x%B>\ %l,%c\ /\ %L\ (%p%%)\ 
+
+function! ScrollbindTest()
+  if &scrollbind
+    return "[s]"
+  else
+    return ""
+  endif
+endfunction
+
+set statusline=\ (%n)\ %{ScrollbindTest()}%(%m%r\ %)%f\ %Y%=<0x%B>\ %l,%c\ /\ %L\ (%p%%)\ 
 " set ruler			" show the cursor position all the time
 set showcmd			" display incomplete commands
 set scrolloff=2 " keep two lines before or after the cursor
