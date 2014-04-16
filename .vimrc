@@ -144,6 +144,8 @@ set scrolloff=2 " keep two lines before or after the cursor
 set showbreak=>\  " Show line wraps with "> ".  Note trailing space.
 ""set cursorline    "Highlight cursor line
 
+""set guioptions=egm
+
 " Highlight current line
 autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
@@ -213,7 +215,7 @@ augroup END
 " Open help files vertically
 augroup helpfiles
   au!
-  au BufRead,BufEnter */doc/* wincmd L
+  au BufRead */doc/* wincmd L
 augroup END
 
 
