@@ -75,9 +75,9 @@ nnoremap <ScrollWheelDown> <ScrollWheelDown>:redraw!<enter>
 inoremap <ScrollWheelUp> <esc><ScrollWheelUp>:redraw!<enter>
 inoremap <ScrollWheelDown> <esc><ScrollWheelDown>:redraw!<enter>
 
-nnoremap <C-S> :set scrollbind!<C-R>
-vnoremap <C-S> :set scrollbind!<C-R>
-inoremap <C-S> <esc>:set scrollbind!<C-R>a
+nnoremap <c-s> :set scrollbind!<CR>
+vnoremap <c-s> :set scrollbind!<CR>
+inoremap <c-s> <esc>:set scrollbind!<CR>a
 
 """ NERDTREE KEY
 ""nnoremap t :NERDTree<enter>
