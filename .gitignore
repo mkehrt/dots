@@ -2,8 +2,12 @@
 .vim/bundles/**
 !.vim/bundle/vundle/**
 
-History stuff.
+#History stuff.
 .vim/.netrwhist
+
+# Backups &c.
+*~
+.*.sw?
 
 # Object files
 *.o
