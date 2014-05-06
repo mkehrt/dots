@@ -22,6 +22,7 @@ Bundle 'duganchen/vim-soy'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'junegunn/seoul256.vim'
+Bundle 'baskerville/bubblegum'
 
 Bundle 'vim-scripts/AutoComplPop'
 let g:acp_behaviorKeywordLength=1
@@ -78,6 +79,11 @@ inoremap <ScrollWheelDown> <esc><ScrollWheelDown>:redraw!<enter>
 nnoremap <c-s> :set scrollbind!<CR>
 vnoremap <c-s> :set scrollbind!<CR>
 inoremap <c-s> <esc>:set scrollbind!<CR>a
+
+
+nnoremap <c-i> :set ignorecase!<CR>
+vnoremap <c-i> :set ignorecase!<CR>
+inoremap <c-i> <esc>:set ignorecase!<CR>a
 
 """ NERDTREE KEY
 ""nnoremap t :NERDTree<enter>
@@ -137,14 +143,23 @@ function! ScrollbindTest()
   endif
 endfunction
 
-set statusline=\ (%n)\ %{ScrollbindTest()}%(%m%r\ %)%f\ %Y%=<0x%B>\ %l,%c\ /\ %L\ (%p%%)\ 
+function! CasesenseTest()
+  if &ignorecase
+    return "[i]"
+  else
+    return ""
+  endif
+endfunction
+
+
+set statusline=\ (%n)%{ScrollbindTest()}%{CasesenseTest()}\ %(%m%r\ %)%f\ %Y%=<0x%B>\ %l,%c\ /\ %L\ (%p%%)\ 
 " set ruler			" show the cursor position all the time
 set showcmd			" display incomplete commands
 set scrolloff=2 " keep two lines before or after the cursor
 set showbreak=>\  " Show line wraps with "> ".  Note trailing space.
 ""set cursorline    "Highlight cursor line
 
-""set guioptions=egm
+set guioptions=aiegmRL
 
 " Highlight current line
 autocmd WinEnter * setlocal cursorline
