@@ -159,7 +159,7 @@ set scrolloff=2 " keep two lines before or after the cursor
 set showbreak=>\  " Show line wraps with "> ".  Note trailing space.
 ""set cursorline    "Highlight cursor line
 
-set guioptions=aiegmRL
+set guioptions=iegmRL
 
 " Highlight current line
 autocmd WinEnter * setlocal cursorline
