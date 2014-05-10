@@ -9,3 +9,6 @@
 	switch = checkout
 	st = status
 	lg = log --graph --pretty=format:'%Cred%h%Creset - %s %Cgreen%cD %C(yellow)%d%Creset %C(bold blue)<%an>%Creset' --date=local --date-order
+  rc = rebase --continue
+  ca = commit -a
+  cap = commit -ap

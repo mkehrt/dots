@@ -82,8 +82,6 @@ inoremap <c-s> <esc>:set scrollbind!<CR>a
 
 
 nnoremap <c-i> :set ignorecase!<CR>
-vnoremap <c-i> :set ignorecase!<CR>
-inoremap <c-i> <esc>:set ignorecase!<CR>a
 
 """ NERDTREE KEY
 ""nnoremap t :NERDTree<enter>
