@@ -1,6 +1,6 @@
 # Let vundle handle bundles, except itself, which should be a submodule.
-.vim/bundles/**
-!.vim/bundle/vundle/**
+.vim/bundle/**
+#!.vim/bundle/vundle/**
 
 #History stuff.
 .vim/.netrwhist

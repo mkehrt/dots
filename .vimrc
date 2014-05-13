@@ -23,7 +23,7 @@ Bundle 'derekwyatt/vim-scala'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'junegunn/seoul256.vim'
 Bundle 'baskerville/bubblegum'
-
+Bundle 'scrooloose/nerdcommenter'
 Bundle 'vim-scripts/AutoComplPop'
 let g:acp_behaviorKeywordLength=1
 Bundle 'vim-scripts/Conque-Shell'
@@ -103,6 +103,16 @@ nnoremap RV :vsplit<enter>:CommandTBuffer<enter>
 nnoremap tt :ConqueTerm bash<enter>
 nnoremap th :split<enter>:ConqueTerm bash<enter>
 nnoremap tv :vsplit<enter>:ConqueTerm bash<enter>
+
+""" NERDCommenter
+nnoremap cd :NERDComComment<CR>
+nnoremap cc :NERDComSexyComment<CR>
+nnoremap cn :NERDComNestedComment<CR>
+nnoremap c  :NERDComToggleComment<CR>
+nnoremap c$ :NERDComEOLComment<CR>
+nnoremap cA :NERDComAppendComment<CR>
+nnoremap ci :NERDComInsertComment<CR>
+nnoremap cu :NERDComUncommentLin<CR>
 
 """ Completion """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
