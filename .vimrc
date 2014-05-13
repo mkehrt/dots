@@ -27,6 +27,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'vim-scripts/AutoComplPop'
 let g:acp_behaviorKeywordLength=1
 Bundle 'vim-scripts/Conque-Shell'
+Bundle 'chriskempson/base16-vim'
 
 """ KEY BINDINGS """""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -267,3 +268,5 @@ set norestorescreen
 
 " Wtite backups
 set backup
+
+set splitbelow splitright
