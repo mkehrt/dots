@@ -25,6 +25,8 @@ alias gv="grep -v"
 alias histg="history | grep -i"
 alias search="find . -iname"
 
+alias ts='date -j -f "%a %b %d %T %Z %Y" "`date`" "+%s"'
+
 alias tag="ctags -R --exclude=.git"
 
 # Use the prefix of what you have typed already to search backwards when

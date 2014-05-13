@@ -30,6 +30,8 @@ Bundle 'vim-scripts/Conque-Shell'
 
 """ KEY BINDINGS """""""""""""""""""""""""""""""""""""""""""""""""""
 
+set notimeout
+
 nnoremap <space> <c-d>
 nnoremap <s-space> <c-u>
 vnoremap <space> <c-d>
@@ -82,9 +84,6 @@ inoremap <c-s> <esc>:set scrollbind!<CR>a
 
 
 nnoremap <c-i> :set ignorecase!<CR>
-
-""" NERDTREE KEY
-""nnoremap t :NERDTree<enter>
 
 """ Command-T
 nnoremap r  <nop>
