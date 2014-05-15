@@ -14,7 +14,7 @@ git_numbers_status () {
   OLDIFS="$IFS"
   IFS=$'\n'
   for line in `git status  | sed -e "s/^$/ /g"` ; do
-    if [[ $line =~ ^$'\t'(modified:|added:|deleted:|updated:) ]] ; then
+    if [[ $line =~ ^$'\t'(modified:|added:|deleted:|updated:|new file:) ]] ; then
       i=$((i+1))
       git_numbers[$i]=$(echo $line | sed -e "s/.*:  *\\(.*\\)/\\1/")
       echo "$line" | sed -e "s/\\(.*:  *\\)\\(.*\\)/\\1[$i] \\2/"
