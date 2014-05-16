@@ -28,6 +28,7 @@ Bundle 'vim-scripts/AutoComplPop'
 let g:acp_behaviorKeywordLength=1
 Bundle 'vim-scripts/Conque-Shell'
 Bundle 'chriskempson/base16-vim'
+Bundle 'tpope/vim-fugitive'
 
 """ KEY BINDINGS """""""""""""""""""""""""""""""""""""""""""""""""""
 
