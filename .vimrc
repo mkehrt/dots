@@ -250,7 +250,7 @@ set noerrorbells
 set vb
 set t_vb=
 
-let tlist_scala_settings = 'scala;t:trait;c:class;f:function'
+let tlist_scala_settings = 'scala;t:trait;c:class;f:function;o:object'
 
 " Don't use Ex mode, use Q for formatting
 map Q gq

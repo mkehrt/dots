@@ -5,3 +5,4 @@
 --regex-scala=/def[ \t]*\([a-zA-Z0-9_]*\)/\1/f,function/
 --regex-scala=/class[ \t]*\([a-zA-Z0-9_]*\)/\1/c,class/
 --regex-scala=/trait[ \t]*\([a-zA-Z0-9_]*\)/\1/t,trait/
+--regex-scala=/object[ \t]*\([a-zA-Z0-9_]*\)/\1/o,object/
