@@ -29,6 +29,7 @@ let g:acp_behaviorKeywordLength=1
 Bundle 'vim-scripts/Conque-Shell'
 Bundle 'chriskempson/base16-vim'
 Bundle 'tpope/vim-fugitive'
+Bundle 'vim-scripts/taglist.vim'
 
 """ KEY BINDINGS """""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -102,9 +103,8 @@ nnoremap rv :vsplit<enter>:CommandT<enter>
 nnoremap Rv :vsplit<enter>:CommandTBuffer<enter>
 nnoremap RV :vsplit<enter>:CommandTBuffer<enter>
 
-nnoremap tt :ConqueTerm bash<enter>
-nnoremap th :split<enter>:ConqueTerm bash<enter>
-nnoremap tv :vsplit<enter>:ConqueTerm bash<enter>
+nnoremap tt :TlistToggle<enter>
+nnoremap tu :TlistUpdate<enter>
 
 """ NERDCommenter
 nnoremap cd :NERDComComment<CR>
@@ -250,6 +250,7 @@ set noerrorbells
 set vb
 set t_vb=
 
+let tlist_scala_settings = 'scala;t:trait;c:class;f:function'
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
