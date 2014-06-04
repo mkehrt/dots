@@ -1,5 +1,5 @@
 #!/bin/bash
-source .bash/path.bash
+source $HOME/.bash/path.bash
 
 #git magic
 source ~/.git-completion.bash
@@ -64,19 +64,19 @@ then
 fi
 
 # Source term color stuff.
-source .bash/colors.bash
+source $HOME/.bash/colors.bash
 
 # Source bash completions.
-source .bash/completion.bash
+source $HOME/.bash/completion.bash
 
 # Source local bash settings.
-if [ -a .bash_local.sh ]
+if [ -a $HOME/.bash_local.sh ]
 then
-  source .bash_local.sh
+  source $HOME/.bash_local.sh
 fi
 
 # gittery
-source .bash/git_numbers.bash
+#source $HOME/.bash/git_numbers.bash
 
 # Autoadded stuff.
 export PATH="/Users/mkehrt/anaconda/bin:$PATH"
