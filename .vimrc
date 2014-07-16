@@ -30,6 +30,7 @@ Bundle 'vim-scripts/Conque-Shell'
 Bundle 'chriskempson/base16-vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/taglist.vim'
+Bundle 'terryma/vim-multiple-cursors'
 
 """ KEY BINDINGS """""""""""""""""""""""""""""""""""""""""""""""""""
 

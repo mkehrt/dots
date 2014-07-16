@@ -5,8 +5,13 @@ source $HOME/.bash/path.bash
 source ~/.git-completion.bash
 source ~/.git-prompt.sh
 
+hostColor="1;34m"
+if [ -z SSH_CONNECTION ] ; then
+  hostColor="1;36m"
+fi
+
 # Prompt
-export PS1="\[\033[1;34m\](\$?) \d \T \w\n\u@\h\$(__git_ps1 \" (%s)\")\$\[\033[0m\] "
+export PS1="\[\033[1;34m\](\$?) \d \T \w\n\u@\[\033[$hostColor\]\h\[\033[1;34m\]\$(__git_ps1 \" (%s)\")\$\[\033[0m\] "
 
 # Aliases
 alias rm="rm -ir"
