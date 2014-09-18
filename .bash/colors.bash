@@ -34,26 +34,26 @@ hexfgwht=999999
 # Mapping ansi colors to xterm colors I can use in vim.
 if [ $TERM_PROGRAM == iTerm.app ] ;
 then
-  echo -e "\033]Pg${hexfgclr}\033\\" # FG
+  #echo -e "\033]Pg${hexfgclr}\033\\" # FG
   echo -e "\033]Ph${hexbgclr}\033\\" # BG
 
-  echo -e "\033]P0${hexfgblk}\033\\" # Black
-  echo -e "\033]P1${hexfgred}\033\\" # Red
-  echo -e "\033]P2${hexfggrn}\033\\" # Green
-  echo -e "\033]P3${hexfgylw}\033\\" # Yellow
-  echo -e "\033]P4${hexfgblu}\033\\" # Blue
-  echo -e "\033]P5${hexfgpur}\033\\" # Magenta
-  echo -e "\033]P6${hexfgcyn}\033\\" # Cyan
-  echo -e "\033]P7${hexfgwht}\033\\" # White
+  #echo -e "\033]P0${hexfgblk}\033\\" # Black
+  #echo -e "\033]P1${hexfgred}\033\\" # Red
+  #echo -e "\033]P2${hexfggrn}\033\\" # Green
+  #echo -e "\033]P3${hexfgylw}\033\\" # Yellow
+  #echo -e "\033]P4${hexfgblu}\033\\" # Blue
+  #echo -e "\033]P5${hexfgpur}\033\\" # Magenta
+  #echo -e "\033]P6${hexfgcyn}\033\\" # Cyan
+  #echo -e "\033]P7${hexfgwht}\033\\" # White
 
-  echo -e "\033]P8${hexbgblk}\033\\" # Black2
-  echo -e "\033]P9${hexbgred}\033\\" # Red2
-  echo -e "\033]Pa${hexbggrn}\033\\" # Green2
-  echo -e "\033]Pb${hexbgylw}\033\\" # Yellow22
-  echo -e "\033]Pc${hexbgblu}\033\\" # Blue2
-  echo -e "\033]Pd${hexbgpur}\033\\" # Magenta2
-  echo -e "\033]Pe${hexbgcyn}\033\\" # Cyan2
-  echo -e "\033]Pf${hexbgwht}\033\\" # White2
+  #echo -e "\033]P8${hexbgblk}\033\\" # Black2
+  #echo -e "\033]P9${hexbgred}\033\\" # Red2
+  #echo -e "\033]Pa${hexbggrn}\033\\" # Green2
+  #echo -e "\033]Pb${hexbgylw}\033\\" # Yellow22
+  #echo -e "\033]Pc${hexbgblu}\033\\" # Blue2
+  #echo -e "\033]Pd${hexbgpur}\033\\" # Magenta2
+  #echo -e "\033]Pe${hexbgcyn}\033\\" # Cyan2
+  #echo -e "\033]Pf${hexbgwht}\033\\" # White2
   clear
 fi
 

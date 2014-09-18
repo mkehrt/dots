@@ -171,9 +171,14 @@ set showbreak=>\  " Show line wraps with "> ".  Note trailing space.
 
 set guioptions=iegmRL
 
-" Highlight current line
+" Highlight current line and column
 autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
+autocmd WinEnter * setlocal cursorcolumn
+autocmd WinLeave * setlocal nocursorcolumn
+
+" Edge of screen
+set colorcolumn+="120"
 
 
 
