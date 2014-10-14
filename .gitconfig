@@ -12,3 +12,4 @@
   rc = rebase --continue
   ca = commit -a
   cap = commit -ap
+  hd = rev-parse HEAD
