@@ -86,8 +86,10 @@ nnoremap <c-s> :set scrollbind!<CR>
 vnoremap <c-s> :set scrollbind!<CR>
 inoremap <c-s> <esc>:set scrollbind!<CR>a
 
-
 nnoremap <c-i> :set ignorecase!<CR>
+
+""" mvim full screen
+noremap <d-F> :set fullscreen!
 
 """ Command-T
 nnoremap r  <nop>
