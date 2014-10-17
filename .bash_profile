@@ -6,7 +6,7 @@ source ~/.git-completion.bash
 source ~/.git-prompt.sh
 
 hostColor="1;34m"
-if [ -n SSH_CONNECTION ] ; then
+if [ -n "$SSH_CONNECTION" ] ; then
   hostColor="1;36m"
 fi
 
