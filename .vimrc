@@ -285,12 +285,18 @@ autocmd BufReadPost *
   \ endif
 
 
-" SML highlighting for signature files
+" Filetype for SML signature files, typescript files
 augroup filetype
   au BufRead,BufNewFile *.sig set filetype=sml
   au BufRead,BufNewFile *.scala set filetype=scala
   au BufRead,BufNewFile *.json set filetype=javascript
   au BufRead,BufNewFile *.soy set filetype=soy
+augroup END
+
+" Open help files vertically
+augroup helpfiles
+  au!
+""  au BufRead */doc/* wincmd
 augroup END
 
 
