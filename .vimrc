@@ -110,14 +110,29 @@ nnoremap tt :TlistToggle<enter>
 nnoremap tu :TlistUpdate<enter>
 
 """ NERDCommenter
-nnoremap cd :NERDComComment<CR>
-nnoremap cc :NERDComSexyComment<CR>
-nnoremap cn :NERDComNestedComment<CR>
-nnoremap c  :NERDComToggleComment<CR>
-nnoremap c$ :NERDComEOLComment<CR>
-nnoremap cA :NERDComAppendComment<CR>
-nnoremap ci :NERDComInsertComment<CR>
-nnoremap cu :NERDComUncommentLin<CR>
+""nnoremap cd :NERDComComment<CR>
+""nnoremap cc :NERDComSexyComment<CR>
+""nnoremap cn :NERDComNestedComment<CR>
+""nnoremap c  :NERDComToggleComment<CR>
+""nnoremap c$ :NERDComEOLComment<CR>
+""nnoremap cA :NERDComAppendComment<CR>
+""nnoremap ci :NERDComInsertComment<CR>
+""nnoremap cu :NERDComUncommentLin<CR>
+
+""" Destroy all arrows
+noremap <Right> <NOP>
+noremap <Left> <NOP>
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+inoremap <Right> <NOP>
+inoremap <Left> <NOP>
+inoremap <Up> <NOP>
+inoremap <Down> <NOP>
+inoremap <S-Right> <Right>
+inoremap <S-Left> <Left>
+inoremap <S-Up> <Up>
+inoremap <S-Down> <Down>
+
 
 """ Completion """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
