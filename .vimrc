@@ -1,6 +1,7 @@
 """ INIT """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set nocompatible
+filetype plugin on
 
 " Term type
 ""set term=builtin_ansi
@@ -14,23 +15,30 @@ call vundle#rc()
 " required! 
 Bundle 'gmarik/vundle'
 
-Bundle 'scrooloose/nerdtree'
-Bundle 'wincent/Command-T'
-Bundle 'altercation/vim-colors-solarized'
+" Languages
+Bundle 'derekwyatt/vim-scala'
 Bundle 'theevocater/thrift.vim'
 Bundle 'duganchen/vim-soy'
-Bundle 'derekwyatt/vim-scala'
+
+" Colors
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'junegunn/seoul256.vim'
-Bundle 'baskerville/bubblegum'
+
+" Utility
+Bundle 'kien/ctrlp.vim' 
+"let g:ctrlp_user_command = 'find src lib -type f' 
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'vim-scripts/AutoComplPop'
 let g:acp_behaviorKeywordLength=1
-Bundle 'vim-scripts/Conque-Shell'
-Bundle 'chriskempson/base16-vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/taglist.vim'
-Bundle 'terryma/vim-multiple-cursors'
+
+"Bundle 'chriskempson/base16-vim'
+"Bundle 'terryma/vim-multiple-cursors'
+"Bundle 'scrooloose/nerdtree'
+Bundle 'wincent/Command-T'
+"Bundle 'vim-scripts/Conque-Shell'
 
 """ KEY BINDINGS """""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -91,39 +99,46 @@ nnoremap <c-i> :set ignorecase!<CR>
 """ mvim full screen
 noremap <d-F> :set fullscreen!
 
-""" Command-T
+""" File open
 nnoremap r  <nop>
 
-nnoremap rr :CommandT<enter>
-nnoremap Rr :CommandTBuffer<enter>
-nnoremap RR :CommandTBuffer<enter>
+nnoremap rr :CtrlP .<CR>
+nnoremap ru :CtrlPMRU<CR>
+nnoremap rb :CtrlBuffer<CR>
 
-nnoremap rh :split<enter>:CommandT<enter>
-nnoremap Rh :split<enter>:CommandTBuffer<enter>
-nnoremap RH :split<enter>:CommandTBuffer<enter>
+"nnoremap rr :CommandT<enter>
+"nnoremap Rr :CommandTBuffer<enter>
+"nnoremap Rr :CommandTBuffer<enter>
+"nnoremap RR :CommandTBuffer<enter>
 
-nnoremap rv :vsplit<enter>:CommandT<enter>
-nnoremap Rv :vsplit<enter>:CommandTBuffer<enter>
-nnoremap RV :vsplit<enter>:CommandTBuffer<enter>
+"nnoremap rh :split<enter>:CommandT<enter>
+"nnoremap Rh :split<enter>:CommandTBuffer<enter>
+"nnoremap RH :split<enter>:CommandTBuffer<enter>
 
-nnoremap tt :TlistToggle<enter>
+"nnoremap rv :vsplit<enter>:CommandT<enter>
+"nnoremap Rv :vsplit<enter>:CommandTBuffer<enter>
+"nnoremap RV :vsplit<enter>:CommandTBuffer<enter>
+
+nnoremap tt :CtrlPTag<enter>
+nnoremap tl :Tlist<CR>
 nnoremap tu :TlistUpdate<enter>
 
 """ NERDCommenter
-""nnoremap cd :NERDComComment<CR>
-""nnoremap cc :NERDComSexyComment<CR>
-""nnoremap cn :NERDComNestedComment<CR>
-""nnoremap c  :NERDComToggleComment<CR>
-""nnoremap c$ :NERDComEOLComment<CR>
-""nnoremap cA :NERDComAppendComment<CR>
-""nnoremap ci :NERDComInsertComment<CR>
-""nnoremap cu :NERDComUncommentLin<CR>
+nnoremap <C-C> <C-c>
+nnoremap <C-c>d :NERDComcomment<cr>
+nnoremap <C-c>c :NERDComsexycomment<cr>
+nnoremap <C-c>n :nerdcomnestedcomment<cr>
+nnoremap <C-c>  :nerdcomtogglecomment<cr>
+nnoremap <C-c>$ :nerdcomeolcomment<cr>
+nnoremap <C-c>a :nerdcomappendcomment<cr>
+nnoremap <C-c>i :nerdcominsertcomment<cr>
+nnoremap <C-c>u :nerdcomuncommentlin<cr>
 
 """ Destroy all arrows
-noremap <Right> <NOP>
-noremap <Left> <NOP>
-noremap <Up> <NOP>
-noremap <Down> <NOP>
+nnoremap <Right> <NOP>
+nnoremap <Left> <NOP>
+nnoremap <Up> <NOP>
+nnoremap <Down> <NOP>
 inoremap <Right> <NOP>
 inoremap <Left> <NOP>
 inoremap <Up> <NOP>
@@ -132,7 +147,6 @@ inoremap <S-Right> <Right>
 inoremap <S-Left> <Left>
 inoremap <S-Up> <Up>
 inoremap <S-Down> <Down>
-
 
 """ Completion """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -262,7 +276,7 @@ augroup END
 " Open help files vertically
 augroup helpfiles
   au!
-  au BufRead */doc/* wincmd L
+""  au BufRead */doc/* wincmd
 augroup END
 
 
@@ -295,3 +309,19 @@ set norestorescreen
 set backup
 
 set splitbelow splitright
+
+""" CtrlP """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:ctrlp_regexp=1
+let g:ctrp_user_command="find ."
+
+function! CtrlPMatchWithGrep(items, str, limit, mmode, ispath, crfile, regex)
+  let options = " -ie "
+  if len(a:str)
+    return systemlist('grep ' . l:options . a:str, deepcopy(a:items))
+  else
+    return deepcopy(a:items)
+  endif
+endfunction
+
+let g:ctrlp_match_func = { 'match': 'CtrlPMatchWithGrep' }
