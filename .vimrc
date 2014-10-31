@@ -96,6 +96,9 @@ inoremap <c-s> <esc>:set scrollbind!<CR>a
 
 nnoremap <c-i> :set ignorecase!<CR>
 
+" Use this to go forward in jump list.
+nnoremap <c-O> <c-i>
+
 """ mvim full screen
 noremap <d-F> :set fullscreen!
 
@@ -314,6 +317,7 @@ set splitbelow splitright
 
 let g:ctrlp_regexp=1
 let g:ctrp_user_command="find ."
+let g:ctrlp_max_files = 0
 
 function! CtrlPMatchWithGrep(items, str, limit, mmode, ispath, crfile, regex)
   let options = " -ie "
