@@ -33,6 +33,8 @@ Bundle 'vim-scripts/AutoComplPop'
 let g:acp_behaviorKeywordLength=1
 Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/taglist.vim'
+Bundle 'Lokaltog/vim-easymotion'
+map , <Plug>(easymotion-prefix)
 
 "Bundle 'chriskempson/base16-vim'
 "Bundle 'terryma/vim-multiple-cursors'
