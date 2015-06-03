@@ -1,8 +1,8 @@
 --langdef=scala
 --langmap=scala:.scala
---regex-scala=/val[ \t]*\([a-zA-Z0-9_]*\)/\1/v,value/
---regex-scala=/var[ \t]*\([a-zA-Z0-9_]*\)/\1/r,variable/
---regex-scala=/def[ \t]*\([a-zA-Z0-9_]*\)/\1/f,function/
---regex-scala=/class[ \t]*\([a-zA-Z0-9_]*\)/\1/c,class/
---regex-scala=/trait[ \t]*\([a-zA-Z0-9_]*\)/\1/t,trait/
---regex-scala=/object[ \t]*\([a-zA-Z0-9_]*\)/\1/o,object/
+--regex-scala=/val[ \t]*([a-zA-Z0-9_]*)/\1/v,value/
+--regex-scala=/var[ \t]*([a-zA-Z0-9_]*)/\1/r,variable/
+--regex-scala=/def[ \t]*([a-zA-Z0-9_]*)/\1/f,function/
+--regex-scala=/class[ \t]*([a-zA-Z0-9_]*)/\1/c,class/
+--regex-scala=/trait[ \t]*([a-zA-Z0-9_]*)/\1/t,trait/
+--regex-scala=/object[ \t]*([a-zA-Z0-9_]*)/\1/o,object/

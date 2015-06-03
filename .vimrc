@@ -17,7 +17,7 @@ Bundle 'gmarik/vundle'
 
 " Languages
 Bundle 'derekwyatt/vim-scala'
-Bundle 'theevocater/thrift.vim'
+Bundle 'solarnz/thrift.vim'
 Bundle 'duganchen/vim-soy'
 
 " Colors
@@ -27,19 +27,25 @@ Bundle 'junegunn/seoul256.vim'
 
 " Utility
 Bundle 'kien/ctrlp.vim' 
-"let g:ctrlp_user_command = 'find src lib -type f' 
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'vim-scripts/AutoComplPop'
 let g:acp_behaviorKeywordLength=1
 Bundle 'tpope/vim-fugitive'
-Bundle 'vim-scripts/taglist.vim'
 Bundle 'Lokaltog/vim-easymotion'
 map , <Plug>(easymotion-prefix)
+Bundle 'majutsushi/tagbar'
+nnoremap T :TagbarToggle<enter>
+set g:tagbar_left
+if executable('brew')
+  set g:tagbar_ctags_bin=/usr/local/bin/ctags
+endif
 
 "Bundle 'chriskempson/base16-vim'
 "Bundle 'terryma/vim-multiple-cursors'
+""Bundle 'vim-scripts/taglist.vim'
 "Bundle 'scrooloose/nerdtree'
-Bundle 'wincent/Command-T'
+""Bundle 'tsukkee/unite-tag'
+""Bundle 'wincent/Command-T'
 "Bundle 'vim-scripts/Conque-Shell'
 
 """ KEY BINDINGS """""""""""""""""""""""""""""""""""""""""""""""""""
@@ -56,8 +62,7 @@ nnoremap - <c-x>
 
 """ Change window
 
-inoremap <c-h> <c-w><c-h>
-inoremap <c-j> <c-w><c-j>
+inoremap <c-h> <c-w><c-h> inoremap <c-j> <c-w><c-j>
 inoremap <c-k> <c-w><c-k>
 inoremap <c-l> <c-w><c-l>
 vnoremap <c-h> <c-w><c-h>
@@ -102,7 +107,7 @@ nnoremap <c-i> :set ignorecase!<CR>
 nnoremap <c-O> <c-i>
 
 """ mvim full screen
-noremap <d-F> :set fullscreen!
+noremap <d-F> <esc>:set fullscreen!<CR>
 
 """ File open
 nnoremap r  <nop>
@@ -254,10 +259,6 @@ set smartcase
 " Switch syntax highlighting on, when the terminal has colors
 syntax on
 
-" Use my color scheme
-" colorscheme mkehrt
-"colorscheme solarized
-"set background=""dark"
 colorscheme codeschool
 
 " For all text files set 'textwidth' to 78 characters.
@@ -274,14 +275,9 @@ autocmd BufReadPost *
 
 " SML highlighting for signature files
 augroup filetype
-  au!
-  au! BufRead,BufNewFile *.sig set filetype=sml
-augroup END
-
-" Open help files vertically
-augroup helpfiles
-  au!
-""  au BufRead */doc/* wincmd
+  au BufRead,BufNewFile *.sig set filetype=sml
+  au BufRead,BufNewFile *.scala set filetype=scala
+  au BufRead,BufNewFile *.json set filetype=javascript
 augroup END
 
 
@@ -331,3 +327,8 @@ function! CtrlPMatchWithGrep(items, str, limit, mmode, ispath, crfile, regex)
 endfunction
 
 let g:ctrlp_match_func = { 'match': 'CtrlPMatchWithGrep' }
+
+
+"""" FSQ """"""""""""""""""""""""""""""""""""""""
+noremap <c-l> <esc>:w<cr>:!git fixlint<cr>:checktime<cr>
+

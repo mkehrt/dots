@@ -20,6 +20,8 @@ alias open="open -F -g"
 alias reveal="open -R"
 alias cd="pushd . > /dev/null; cd"
 
+alias shuf="awk 'BEGIN{srand()}{printf \"%06d %s\n\", rand()*1000000, $0;}' | sort -n | cut -c8-"
+
 alias first="head -n 1"
 alias second="head -n 2 | tail -n 1"
 alias third="head -n 3 | tail -n 1"
