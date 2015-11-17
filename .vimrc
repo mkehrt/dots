@@ -176,7 +176,7 @@ set backspace=indent,eol,start
 
 """ FOLDING """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set foldenable
-set foldmethod=manual
+set foldmethod=indent
 
 
 
