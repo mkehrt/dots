@@ -24,6 +24,7 @@ Bundle 'duganchen/vim-soy'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'junegunn/seoul256.vim'
+Bundle "chriskempson/base16-vim"
 
 " Utility
 Bundle 'kien/ctrlp.vim' 
@@ -35,10 +36,6 @@ Bundle 'Lokaltog/vim-easymotion'
 map , <Plug>(easymotion-prefix)
 Bundle 'majutsushi/tagbar'
 nnoremap T :TagbarToggle<enter>
-set g:tagbar_left
-if executable('brew')
-  set g:tagbar_ctags_bin=/usr/local/bin/ctags
-endif
 
 "Bundle 'chriskempson/base16-vim'
 "Bundle 'terryma/vim-multiple-cursors'
@@ -144,19 +141,22 @@ nnoremap <C-c>a :nerdcomappendcomment<cr>
 nnoremap <C-c>i :nerdcominsertcomment<cr>
 nnoremap <C-c>u :nerdcomuncommentlin<cr>
 
+" Exit insert to the right
+nnoremap <S-Esc> <Esc>l
+
 """ Destroy all arrows
-nnoremap <Right> <NOP>
-nnoremap <Left> <NOP>
-nnoremap <Up> <NOP>
-nnoremap <Down> <NOP>
-inoremap <Right> <NOP>
-inoremap <Left> <NOP>
-inoremap <Up> <NOP>
-inoremap <Down> <NOP>
-inoremap <S-Right> <Right>
-inoremap <S-Left> <Left>
-inoremap <S-Up> <Up>
-inoremap <S-Down> <Down>
+"nnoremap <Right> <NOP>
+"nnoremap <Left> <NOP>
+"nnoremap <Up> <NOP>
+"nnoremap <Down> <NOP>
+"inoremap <Right> <NOP>
+"inoremap <Left> <NOP>
+"inoremap <Up> <NOP>
+"inoremap <Down> <NOP>
+"inoremap <S-Right> <Right>
+"inoremap <S-Left> <Left>
+"inoremap <S-Up> <Up>
+"inoremap <S-Down> <Down>
 
 """ Completion """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -259,7 +259,8 @@ set smartcase
 " Switch syntax highlighting on, when the terminal has colors
 syntax on
 
-colorscheme codeschool
+"colorscheme codeschool
+colorscheme base16-ocean
 
 " For all text files set 'textwidth' to 78 characters.
 autocmd FileType text setlocal textwidth=78
@@ -278,6 +279,7 @@ augroup filetype
   au BufRead,BufNewFile *.sig set filetype=sml
   au BufRead,BufNewFile *.scala set filetype=scala
   au BufRead,BufNewFile *.json set filetype=javascript
+  au BufRead,BufNewFile *.soy set filetype=soy
 augroup END
 
 

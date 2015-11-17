@@ -13,4 +13,4 @@
   ca = commit -a
   cap = commit -ap
   hd = rev-parse HEAD
-  mhd = git merge-base HEAD master
+  mhd = merge-base HEAD master

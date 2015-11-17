@@ -6,8 +6,10 @@ source ~/.git-completion.bash
 source ~/.git-prompt.sh
 
 hostColor="1;34m"
-if [ -n "$SSH_CONNECTION" ] ; then
-  hostColor="1;36m"
+if [ $TERM = "screen" ] ; then
+  hostColor="1;33m"
+elif [ -n "$SSH_CONNECTION" ] ; then
+  hostColor="1;35m"
 fi
 
 # Prompt
