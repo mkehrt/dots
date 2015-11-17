@@ -260,7 +260,8 @@ set smartcase
 syntax on
 
 "colorscheme codeschool
-colorscheme base16-ocean
+colorscheme mkehrt-base16-ocean
+set bg=dark
 
 " For all text files set 'textwidth' to 78 characters.
 autocmd FileType text setlocal textwidth=78
