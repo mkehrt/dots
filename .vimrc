@@ -25,6 +25,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'junegunn/seoul256.vim'
 Bundle "chriskempson/base16-vim"
+Bundle "vim-scripts/BlockHL"
 
 " Utility
 Bundle 'kien/ctrlp.vim' 
@@ -158,6 +159,11 @@ nnoremap <S-Esc> <Esc>l
 "inoremap <S-Up> <Up>
 "inoremap <S-Down> <Down>
 
+nnoremap <C-g>b :Gblame<CR>
+inoremap <C-g>b <esc>:Gblame<CR>
+nnoremap <C-g>d :Gdiff<CR>
+inoremap <C-g>d <esc>:Gdiff<CR>
+
 """ Completion """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set completeopt=longest,menuone
@@ -260,8 +266,8 @@ set smartcase
 syntax on
 
 "colorscheme codeschool
-colorscheme mkehrt-base16-ocean
 set bg=dark
+colorscheme mkehrt-base16-ocean
 
 " For all text files set 'textwidth' to 78 characters.
 autocmd FileType text setlocal textwidth=78

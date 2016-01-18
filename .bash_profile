@@ -15,6 +15,10 @@ fi
 # Prompt
 export PS1="\[\033[1;34m\](\$?) \d \T \w\n\u@\[\033[$hostColor\]\h\[\033[1;34m\]\$(__git_ps1 \" (%s)\")\$\[\033[0m\] "
 
+# naming things
+function tabname { printf "\e]1;$1\a"; }
+function winname { printf "\e]2;$1\a"; }
+
 # Aliases
 alias rm="rm -ir"
 alias ls="ls -Fa"
