@@ -16,4 +16,5 @@
   rc = rebase --continue
   st = status
   switch = checkout
+  pp = !git pull --rebase && git push origin master
   upd = !GIT_BR=`git rev-parse --abbrev-ref HEAD` && git switch master && git pull --rebase && git switch $GIT_BR && git rebase master
