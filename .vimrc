@@ -109,11 +109,11 @@ nnoremap <c-O> <c-i>
 noremap <d-F> <esc>:set fullscreen!<CR>
 
 """ File open
-nnoremap r  <nop>
+nnoremap t  <nop>
 
-nnoremap rr :CtrlP .<CR>
-nnoremap ru :CtrlPMRU<CR>
-nnoremap rb :CtrlBuffer<CR>
+nnoremap tt :CtrlP .<CR>
+nnoremap tu :CtrlPMRU<CR>
+nnoremap tb :CtrlBuffer<CR>
 
 "nnoremap rr :CommandT<enter>
 "nnoremap Rr :CommandTBuffer<enter>
