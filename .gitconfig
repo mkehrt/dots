@@ -1,14 +1,14 @@
 [user]
-	name = Matthew Kehrt
-	email = mkehrt@roseandsigil.net
+  name = Matthew Kehrt
+  email = mkehrt@roseandsigil.net
 [core]
-	trustctime = false
+  trustctime = false
 [alias]
-	pr = pull --rebase
-	br = checkout -b
-	switch = checkout
-	st = status
-	lg = log --graph --pretty=format:'%Cred%h%Creset - %s %Cgreen%cD %C(yellow)%d%Creset %C(bold blue)<%an>%Creset' --date=local --topo-order
+  pr = pull --rebase
+  br = checkout -b
+  switch = checkout
+  st = status
+  lg = log --graph --pretty=format:'%Cred%h%Creset - %s %Cgreen%cD %C(yellow)%d%Creset %C(bold blue)<%an>%Creset' --date=local --topo-order
   rc = rebase --continue
   ca = commit -a
   cap = commit -ap
@@ -16,3 +16,4 @@
   mhd = merge-base HEAD master
   fp = !git pull --rebase && git fpush origin master
   upd = !GIT_BR=`git rev-parse --abbrev-ref HEAD` && git switch master && git pull --rebase && git switch $GIT_BR && git rebase master
+  amend = commit --amend
