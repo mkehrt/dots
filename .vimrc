@@ -110,7 +110,6 @@ noremap <d-F> <esc>:set fullscreen!<CR>
 
 """ File open
 nnoremap t  <nop>
-
 nnoremap tt :CtrlP .<CR>
 nnoremap tu :CtrlPMRU<CR>
 nnoremap tb :CtrlBuffer<CR>
@@ -128,9 +127,10 @@ nnoremap tb :CtrlBuffer<CR>
 "nnoremap Rv :vsplit<enter>:CommandTBuffer<enter>
 "nnoremap RV :vsplit<enter>:CommandTBuffer<enter>
 
-nnoremap tt :CtrlPTag<enter>
-nnoremap tl :Tlist<CR>
-nnoremap tu :TlistUpdate<enter>
+nnoremap T  <nop>
+nnoremap Tt :CtrlPTag<enter>
+nnoremap Tl :Tlist<CR>
+nnoremap Tu :TlistUpdate<enter>
 
 """ NERDCommenter
 nnoremap <C-C> <C-c>
