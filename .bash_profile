@@ -42,10 +42,19 @@ alias ts='date -j -f "%a %b %d %T %Z %Y" "`date`" "+%s"'
 
 alias tag="ctags -R --exclude=.git"
 
+alias weather="curl http://wttr.in/San_Fransisco"
+alias moon="curl http://wttr.in/Moon"
+
 # Use the prefix of what you have typed already to search backwards when
 # pressing up/down to navigate history
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
+
+HISTSIZE=500000
+HISTFILESIZE=500000
+export HISTTIMEFORMAT="[%F %T] "
+export HISTFILE=~/.bash_eternal_history
+PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 # Prevent accidentally overwriting files when piping output
 # echo hello >out.txt will fail if out.txt already exists

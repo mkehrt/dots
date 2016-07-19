@@ -14,3 +14,5 @@
   cap = commit -ap
   hd = rev-parse HEAD
   mhd = merge-base HEAD master
+  fp = !git pull --rebase && git fpush origin master
+  upd = !GIT_BR=`git rev-parse --abbrev-ref HEAD` && git switch master && git pull --rebase && git switch $GIT_BR && git rebase master

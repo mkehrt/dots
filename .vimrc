@@ -30,6 +30,7 @@ Bundle "vim-scripts/BlockHL"
 " Utility
 Bundle 'kien/ctrlp.vim' 
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/AutoComplPop'
 let g:acp_behaviorKeywordLength=1
 Bundle 'tpope/vim-fugitive'
@@ -339,5 +340,17 @@ let g:ctrlp_match_func = { 'match': 'CtrlPMatchWithGrep' }
 
 
 """" FSQ """"""""""""""""""""""""""""""""""""""""
-noremap <c-l> <esc>:w<cr>:!git fixlint<cr>:checktime<cr>
+inoremap <c-f> NOP
+inoremap <c-f>l <esc>:w<cr>:!git fixlint<cr>:checktime<cr>
+inoremap <c-f>b <esc>:w<cr>:!./fs bg<cr>:checktime<cr>
+inoremap <c-f>a <esc>:w<cr>:!./fs bag<cr>:checktime<cr>
+inoremap <c-f>g <esc>:w<cr>:!./fs green<cr>:checktime<cr>
+inoremap <c-f>c <esc>:w<cr>:!echo % \| xargs dirname \| xargs ./fs compile<cr>
+
+noremap <c-f> NOP
+noremap <c-f>l <esc>:w<cr>:!git fixlint<cr>:checktime<cr>
+noremap <c-f>b <esc>:w<cr>:!./fs bg<cr>:checktime<cr>
+noremap <c-f>a <esc>:w<cr>:!./fs bag<cr>:checktime<cr>
+noremap <c-f>g <esc>:w<cr>:!./fs green<cr>:checktime<cr>
+noremap <c-f>c <esc>:w<cr>:!echo % \| xargs dirname \| xargs ./fs compile<cr>
 
