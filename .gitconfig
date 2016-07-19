@@ -4,16 +4,16 @@
 [core]
   trustctime = false
 [alias]
-  pr = pull --rebase
+  amend = commit --amend
   br = checkout -b
-  switch = checkout
-  st = status
-  lg = log --graph --pretty=format:'%Cred%h%Creset - %s %Cgreen%cD %C(yellow)%d%Creset %C(bold blue)<%an>%Creset' --date=local --topo-order
-  rc = rebase --continue
   ca = commit -a
   cap = commit -ap
-  hd = rev-parse HEAD
-  mhd = merge-base HEAD master
   fp = !git pull --rebase && git fpush origin master
+  hd = rev-parse HEAD
+  lg = log --graph --pretty=format:'%Cred%h%Creset - %s %Cgreen%cD %C(yellow)%d%Creset %C(bold blue)<%an>%Creset' --date=local --topo-order
+  mhd = merge-base HEAD master
+  pr = pull --rebase
+  rc = rebase --continue
+  st = status
+  switch = checkout
   upd = !GIT_BR=`git rev-parse --abbrev-ref HEAD` && git switch master && git pull --rebase && git switch $GIT_BR && git rebase master
-  amend = commit --amend
