@@ -26,6 +26,7 @@ Bundle 'flazz/vim-colorschemes'
 Bundle 'junegunn/seoul256.vim'
 Bundle "chriskempson/base16-vim"
 Bundle "vim-scripts/BlockHL"
+Bundle "kien/rainbow_parentheses.vim"
 
 " Utility
 Bundle 'kien/ctrlp.vim' 
@@ -38,6 +39,13 @@ Bundle 'Lokaltog/vim-easymotion'
 map , <Plug>(easymotion-prefix)
 Bundle 'majutsushi/tagbar'
 nnoremap T :TagbarToggle<enter>
+Bundle 'junegunn/fzf'
+
+" Motions
+Bundle 'vim-scripts/argtextobj.vim'
+Bundle 'michaeljsmith/vim-indent-object'
+Bundle 'nelstrom/vim-textobj-rubyblock'
+
 
 "Bundle 'chriskempson/base16-vim'
 "Bundle 'terryma/vim-multiple-cursors'
@@ -112,7 +120,7 @@ noremap <d-F> <esc>:set fullscreen!<CR>
 nnoremap t  <nop>
 nnoremap tt :CtrlP .<CR>
 nnoremap tu :CtrlPMRU<CR>
-nnoremap tb :CtrlBuffer<CR>
+nnoremap tb :CtrlPBuffer<CR>
 
 "nnoremap rr :CommandT<enter>
 "nnoremap Rr :CommandTBuffer<enter>
