@@ -40,6 +40,8 @@ map , <Plug>(easymotion-prefix)
 Bundle 'majutsushi/tagbar'
 nnoremap T :TagbarToggle<enter>
 Bundle 'junegunn/fzf'
+Bundle 'vim-scripts/taglist.vim'
+Bundle 'tpope/vim-rsi' 
 
 " Motions
 Bundle 'vim-scripts/argtextobj.vim'
@@ -108,10 +110,14 @@ nnoremap <c-s> :set scrollbind!<CR>
 vnoremap <c-s> :set scrollbind!<CR>
 inoremap <c-s> <esc>:set scrollbind!<CR>a
 
-nnoremap <c-i> :set ignorecase!<CR>
+nnoremap <c-o> :set ignorecase!<CR>
 
 " Use this to go forward in jump list.
-nnoremap <c-O> <c-i>
+nnoremap ' <c-i>
+nnoremap ; <c-o>
+
+" Tags
+nnoremap & g<C-]>
 
 """ mvim full screen
 noremap <d-F> <esc>:set fullscreen!<CR>
@@ -122,18 +128,9 @@ nnoremap tt :CtrlP .<CR>
 nnoremap tu :CtrlPMRU<CR>
 nnoremap tb :CtrlPBuffer<CR>
 
-"nnoremap rr :CommandT<enter>
-"nnoremap Rr :CommandTBuffer<enter>
-"nnoremap Rr :CommandTBuffer<enter>
-"nnoremap RR :CommandTBuffer<enter>
+nnoremap th :split<enter>:CtrlP<enter>
 
-"nnoremap rh :split<enter>:CommandT<enter>
-"nnoremap Rh :split<enter>:CommandTBuffer<enter>
-"nnoremap RH :split<enter>:CommandTBuffer<enter>
-
-"nnoremap rv :vsplit<enter>:CommandT<enter>
-"nnoremap Rv :vsplit<enter>:CommandTBuffer<enter>
-"nnoremap RV :vsplit<enter>:CommandTBuffer<enter>
+nnoremap tv :vsplit<enter>:CtrlP<enter>
 
 nnoremap T  <nop>
 nnoremap Tt :CtrlPTag<enter>
@@ -195,8 +192,6 @@ set foldmethod=indent
 
 
 
-
-
 """ Misc display """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set number
 set laststatus=2 " always show status bar
@@ -225,7 +220,7 @@ set scrolloff=2 " keep two lines before or after the cursor
 set showbreak=>\  " Show line wraps with "> ".  Note trailing space.
 ""set cursorline    "Highlight cursor line
 
-set guioptions=iegmRL
+set guioptions=iegm
 
 " Highlight current line and column
 autocmd WinEnter * setlocal cursorline
