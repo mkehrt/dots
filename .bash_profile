@@ -1,23 +1,23 @@
 #!/bin/bash
-source $HOME/.bash/path.bash
 
-#git magic
-source ~/.git-completion.bash
-source ~/.git-prompt.sh
+for file in $(ls ${HOME}/dots/bash); do
+  source ${HOME}/dots/bash/$file
+done
 
+# Apple bullshit
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
+export LINODE_NUMBERS="45.56.90.57"
+export LINODE_GENERAL="45.79.150.74"
+
+# Prompt
 hostColor="1;34m"
 if [ $TERM = "screen" ] ; then
   hostColor="1;33m"
 elif [ -n "$SSH_CONNECTION" ] ; then
   hostColor="1;35m"
 fi
-
-# Prompt
 export PS1="\[\033[1;34m\](\$?) \d \T \w\n\u@\[\033[$hostColor\]\h\[\033[1;34m\]\$(__git_ps1 \" (%s)\")\$\[\033[0m\] "
-
-# naming things
-function tabname { printf "\e]1;$1\a"; }
-function winname { printf "\e]2;$1\a"; }
 
 # Aliases
 alias rm="rm -ir"
@@ -25,8 +25,6 @@ alias ls="ls -Fa"
 alias open="open -F -g"
 alias reveal="open -R"
 alias cd="pushd . > /dev/null; cd"
-
-alias shuf="awk 'BEGIN{srand()}{printf \"%06d %s\n\", rand()*1000000, $0;}' | sort -n | cut -c8-"
 
 alias first="head -n 1"
 alias second="head -n 2 | tail -n 1"
@@ -38,11 +36,9 @@ alias gv="grep -v"
 alias histg="history | grep -i"
 alias search="find . -iname"
 
-alias ts='date -j -f "%a %b %d %T %Z %Y" "`date`" "+%s"'
-
 alias tag="ctags -R --exclude=.git"
 
-alias weather="curl http://wttr.in/San_Fransisco"
+alias weather="curl http://wttr.in/New_York"
 alias moon="curl http://wttr.in/Moon"
 
 # Use the prefix of what you have typed already to search backwards when
@@ -50,6 +46,7 @@ alias moon="curl http://wttr.in/Moon"
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
+# History
 HISTSIZE=500000
 HISTFILESIZE=500000
 export HISTTIMEFORMAT="[%F %T] "
@@ -85,18 +82,20 @@ then
     export SSH_AUTH_SOCK=$SOCK
 fi
 
-# Source term color stuff.
-source $HOME/.bash/colors.bash
-
-# Source bash completions.
-source $HOME/.bash/completion.bash
-
 # Source local bash settings.
-if [ -a $HOME/.bash_local.sh ]
+if [ -a .bash_local.sh ]
 then
-  source $HOME/.bash_local.sh
+  source .bash_local.sh
 fi
 
-# gittery
-#source $HOME/.bash/git_numbers.bash
+# Path
+# Path stuff at end because so many tools append to this file
 
+export PATH="${HOME}/bin:/opt/local/bin:/opt/local/sbin:${PATH}"
+
+# Added by install tools
+export PATH="${HOME}/Library/Haskell/bin:${PATH}"
+export PATH=":${HOME}/.local/bin:${PATH}"
+export PATH="/Users/mkehrt/anaconda/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.elan/bin:$PATH"
