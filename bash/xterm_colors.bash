@@ -32,7 +32,7 @@ hexfgwht=999999
 
 # Use magic escape sequences to set set iterm colors.
 # Mapping ansi colors to xterm colors I can use in vim.
-if [ $TERM_PROGRAM == iTerm.app ] ;
+if [ "${TERM_PROGRAM}" == "iTerm.app" ] ;
 then
   echo -e "\033]Pg${hexfgclr}\033\\" # FG
   echo -e "\033]Ph${hexbgclr}\033\\" # BG
