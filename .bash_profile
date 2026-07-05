@@ -27,7 +27,7 @@ CYAN="\[\e[1;36m\]"
 RESET_COLOR="\[\e[0m\]"
 
 HOST_COLOR="${BLUE}"
-if [[ "${TERM}" =~ .*screen\$ ]] ; then
+if [[ "${TERM}" =~ .*screen.* ]] ; then
   HOST_COLOR="${YELLOW}"
 elif [ -n "${SSH_CONNECTION}" ] ; then
   HOST_COLOR="${MAGENTA}"
