@@ -3,9 +3,9 @@
 # Fooling around with term colors.
 
 # comments are xterm colors
-# Chroma 0.1, lightness 0.8
-HEX_BG=1c1c1c # 234
-HEX_FG=bebebe # 252
+# Chroma 0.125, lightness 0.85
+HEX_BG=101010 # 234
+HEX_FG=aeaeae # 252
 
 HEX_BG_BLACK=000000
 HEX_FG_BLACK=000000
@@ -13,31 +13,31 @@ HEX_FG_BLACK=000000
 HEX_BG_WHITE=ffffff
 HEX_FG_WHITE=ffffff
 
-HEX_BG_RED=f3a3bb # 161, hue 0
-HEX_FG_RED=f3a3bb # 167
+HEX_BG_RED=ee8bab # 161, hue 0
+HEX_FG_RED=ee8bab # 167
 
 # Unused.
-HEX_BG_ORANGE=eae7b # Hue 60
-HEX_FG_ORANGE=eeae7b 
+HEX_BG_ORANGE=e79a57 # Hue 60
+HEX_FG_ORANGE=e79a57 
 
-HEX_BG_YELLOW=d7bb70 # 214, hue 90
-HEX_FG_YELLOW=d7bb70 # 220
+HEX_BG_YELLOW=cdaa45 # 214, hue 90
+HEX_FG_YELLOW=cdaa45 # 220
 
-HEX_BG_GREEN=9bce90 # 28, hue 140, but maybe try 150
-HEX_FG_GREEN=8ed09c # 34
+HEX_BG_GREEN=82c174 # 28, hue 140, but maybe try 150
+HEX_FG_GREEN=82c174 # 34
 
-HEX_BG_CYAN=67d2cc # 30, hue 190
-HEX_FG_CYAN=67d2cc # 36
+HEX_BG_CYAN=1fc7bf # 30, hue 190
+HEX_FG_CYAN=1fc7bf # 36
 
-HEX_BG_BLUE=75caf2 # 26, hue 230
-HEX_FG_BLUE=75caf2 # 32
+HEX_BG_BLUE=47bcee # 26, hue 230
+HEX_FG_BLUE=47bcee # 32
 
-HEX_BG_PURPLE=c7aff5 # 105, hue 300
-HEX_FG_PURPLE=c7aff5 # 99 
+HEX_BG_PURPLE=ba9bf1 # 105, hue 300
+HEX_FG_PURPLE=ba9bf1 # 99 
 
 # Unused; uses purple instead.
-HEX_BG_MAGENTA=e3a6dd # 105, hue 330
-HEX_FG_MAGENTA=e3a6dd # 99 
+HEX_BG_MAGENTA=da90d4 # 105, hue 330
+HEX_FG_MAGENTA=da90d4 # 99 
 
 # Use magic escape sequences to set set iterm colors.
 # Mapping ansi colors to xterm colors I can use in vim.
