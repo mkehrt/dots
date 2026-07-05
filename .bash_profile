@@ -37,11 +37,11 @@ fi
 function set_prompt() {
     EXIT_CODE="$?"
 
-    EXIT_CODE_COLOR=$BLUE
-    if [[ $EXIT_CODE -ne 0 ]] ; then
-      EXIT_CODE_COLOR=$RED
+    EXIT_CODE_COLOR="${BLUE}"
+    if [[ "${EXIT_CODE}" -ne 0 ]] ; then
+      EXIT_CODE_COLOR="${RED}"
     fi
-    export PS1="$BLUE($EXIT_CODE_COLOR$EXIT_CODE$BLUE) \d \T \w\n\u@$HOST_COLOR\h$BLUE\$(__git_ps1 \" (%s)\") \$$RESET_COLOR "
+    export PS1="${BLUE}(${EXIT_CODE_COLOR}${EXIT_CODE}${BLUE}) \d \T \w\n\u@${HOST_COLOR}\h${BLUE}\$(__git_ps1 \" (%s)\") \$${RESET_COLOR} "
 }
 
 PROMPT_COMMAND=set_prompt
@@ -102,11 +102,11 @@ shopt -s checkwinsize
 
 # Predictable SSH authentication socket location.
 SOCK="/tmp/ssh-agent-${USER}-screen"
-if test $SSH_AUTH_SOCK && [ $SSH_AUTH_SOCK != $SOCK ]
+if test "${SSH_AUTH_SOCK}" && [ "${SSH_AUTH_SOCK}" != "${SOCK}" ]
 then
-    rm -f /tmp/ssh-agent-$USER-screen
-    ln -sf $SSH_AUTH_SOCK $SOCK
-    export SSH_AUTH_SOCK=$SOCK
+    rm -f "/tmp/ssh-agent-${USER}-screen"
+    ln -sf "${SSH_AUTH_SOCK}" "${SOCK}"
+    export SSH_AUTH_SOCK="${SOCK}"
 fi
 
 # Source local bash settings.
