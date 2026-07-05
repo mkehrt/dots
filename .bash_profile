@@ -41,7 +41,7 @@ function set_prompt() {
     if [[ $EXIT_CODE -ne 0 ]] ; then
       EXIT_CODE_COLOR=$RED
     fi
-    export PS1="$BLUE($EXIT_CODE_COLOR$EXIT_CODE$BLUE) \d \T \w\n\u@$HOST_COLOR\h$BLUE\$(__git_ps1 \" (%s)\") \$$RESET_COLOR"
+    export PS1="$BLUE($EXIT_CODE_COLOR$EXIT_CODE$BLUE) \d \T \w\n\u@$HOST_COLOR\h$BLUE\$(__git_ps1 \" (%s)\") \$$RESET_COLOR "
 }
 
 PROMPT_COMMAND=set_prompt
