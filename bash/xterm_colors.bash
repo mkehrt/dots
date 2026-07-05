@@ -3,57 +3,66 @@
 # Fooling around with term colors.
 
 # comments are xterm colors
-hexbgclr=1c1c1c # 234
-hexfgclr=d0d0d0 # 252
+# Chroma 0.1, lightness 0.8
+HEX_BG=1c1c1c # 234
+HEX_FG=bebebe # 252
 
-hexbgblk=c8c8ff
-hexfgblk=c8c8ff
+HEX_BG_BLACK=000000
+HEX_FG_BLACK=000000
 
-hexbgred=d7005f # 161
-hexfgred=d75f5f # 167
+HEX_BG_WHITE=ffffff
+HEX_FG_WHITE=ffffff
 
-hexbggrn=008700 # 28
-hexfggrn=00af00 # 34
+HEX_BG_RED=f3a3bb # 161, hue 0
+HEX_FG_RED=f3a3bb # 167
 
-hexbgylw=afaf00 # 214
-hexfgylw=afd75f # 220
+# Unused.
+HEX_BG_ORANGE=eae7b # Hue 60
+HEX_FG_ORANGE=eeae7b 
 
-hexbgblu=005fd7 # 26
-hexfgblu=0087d7 # 32
+HEX_BG_YELLOW=d7bb70 # 214, hue 90
+HEX_FG_YELLOW=d7bb70 # 220
 
-hexbgpur=8787ff # 105
-hexfgpur=875fff # 99 
+HEX_BG_GREEN=9bce90 # 28, hue 140, but maybe try 150
+HEX_FG_GREEN=8ed09c # 34
 
-hexbgcyn=008787 # 30
-hexfgcyn=00af87 # 36
+HEX_BG_CYAN=67d2cc # 30, hue 190
+HEX_FG_CYAN=67d2cc # 36
 
-hexbgwht=ffffff
-hexfgwht=999999
+HEX_BG_BLUE=75caf2 # 26, hue 230
+HEX_FG_BLUE=75caf2 # 32
+
+HEX_BG_PURPLE=c7aff5 # 105, hue 300
+HEX_FG_PURPLE=c7aff5 # 99 
+
+# Unused; uses purple instead.
+HEX_BG_MAGENTA=e3a6dd # 105, hue 330
+HEX_FG_MAGENTA=e3a6dd # 99 
 
 # Use magic escape sequences to set set iterm colors.
 # Mapping ansi colors to xterm colors I can use in vim.
 if [ "${TERM_PROGRAM}" == "iTerm.app" ] ;
 then
-  echo -e "\033]Pg${hexfgclr}\033\\" # FG
-  echo -e "\033]Ph${hexbgclr}\033\\" # BG
+  echo -e "\033]Pg${HEX_FG}\033\\" # FG
+  echo -e "\033]Ph${HEX_BG}\033\\" # BG
 
-  echo -e "\033]P0${hexfgblk}\033\\" # Black
-  echo -e "\033]P1${hexfgred}\033\\" # Red
-  echo -e "\033]P2${hexfggrn}\033\\" # Green
-  echo -e "\033]P3${hexfgylw}\033\\" # Yellow
-  echo -e "\033]P4${hexfgblu}\033\\" # Blue
-  echo -e "\033]P5${hexfgpur}\033\\" # Magenta
-  echo -e "\033]P6${hexfgcyn}\033\\" # Cyan
-  echo -e "\033]P7${hexfgwht}\033\\" # White
+  echo -e "\033]P0${HEX_FG_BLACK}\033\\" # Black
+  echo -e "\033]P1${HEX_FG_RED}\033\\" # Red
+  echo -e "\033]P2${HEX_FG_GREEN}\033\\" # Green
+  echo -e "\033]P3${HEX_FG_YELLOW}\033\\" # Yellow
+  echo -e "\033]P4${HEX_FG_BLUE}\033\\" # Blue
+  echo -e "\033]P5${HEX_FG_PURPLE}\033\\" # Magenta
+  echo -e "\033]P6${HEX_FG_CYAN}\033\\" # Cyan
+  echo -e "\033]P7${HEX_FG_WHITE}\033\\" # White
 
-  echo -e "\033]P8${hexbgblk}\033\\" # Black2
-  echo -e "\033]P9${hexbgred}\033\\" # Red2
-  echo -e "\033]Pa${hexbggrn}\033\\" # Green2
-  echo -e "\033]Pb${hexbgylw}\033\\" # Yellow22
-  echo -e "\033]Pc${hexbgblu}\033\\" # Blue2
-  echo -e "\033]Pd${hexbgpur}\033\\" # Magenta2
-  echo -e "\033]Pe${hexbgcyn}\033\\" # Cyan2
-  echo -e "\033]Pf${hexbgwht}\033\\" # White2
+  echo -e "\033]P8${HEX_BG_BLACK}\033\\" # Black2
+  echo -e "\033]P9${HEX_BG_RED}\033\\" # Red2
+  echo -e "\033]Pa${HEX_BG_GREEN}\033\\" # Green2
+  echo -e "\033]Pb${HEX_BG_YELLOW}\033\\" # Yellow22
+  echo -e "\033]Pc${HEX_BG_BLUE}\033\\" # Blue2
+  echo -e "\033]Pd${HEX_BG_PURPLE}\033\\" # Magenta2
+  echo -e "\033]Pe${HEX_BG_CYAN}\033\\" # Cyan2
+  echo -e "\033]Pf${HEX_BG_WHITE}\033\\" # White2
   clear
 fi
 

@@ -24,6 +24,7 @@ function set_prompt() {
       EXIT_CODE_COLOR="${RED}"
     fi
     export PS1="${BLUE}(${EXIT_CODE_COLOR}${EXIT_CODE}${BLUE}) \d \T \w\n\u@${HOST_COLOR}\h${BLUE}\$(__git_ps1 \" (%s)\") \$${RESET_COLOR} "
+    export PS1="$RED red $RESET_COLOR$GREEN green $RESET_COLOR$YELLOW yellow $RESET_COLOR$BLUE blue $RESET_COLOR$MAGENTA magenta $RESET_COLOR$CYAN cyan $RESET_COLOR$WHITE white $RESET_COLOR"
 }
 
 PROMPT_COMMAND=set_prompt
