@@ -19,7 +19,7 @@ source "${HOME}/dots/bash/path.bash"
 
 source "${HOME}/dots/bash/git_numbers.bash"
 source "${HOME}/dots/bash/git_completion.bash"
-source "${HOME}/dots/bash/git_prompt.sh"
+source "${HOME}/dots/bash/git_prompt.bash"
 
 # Source local bash settings.
 if [ -a "${HOME}/.bash_local.sh" ]
